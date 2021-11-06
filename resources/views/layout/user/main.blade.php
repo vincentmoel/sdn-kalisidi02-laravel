@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    @include('partials.user.navbar')
+    <header>
+      @include('partials.user.navbar')
+      
+
+    </header>
 
     <div class="container">
         @yield('container')

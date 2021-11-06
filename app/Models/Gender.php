@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Position extends Model
+class Gender extends Model
 {
     use HasFactory;
     public $timestamps = false;
 
-    public function teachers()
+    public function students()
     {
-        return $this->hasMany(Teacher::class);
+        return $this->hasMany(Student::class);
     }
 }

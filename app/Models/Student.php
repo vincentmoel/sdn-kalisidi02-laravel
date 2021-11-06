@@ -9,8 +9,15 @@ class Student extends Model
 {
     use HasFactory;
 
+    protected $with = ['religion','gender'];
+
     public function religion()
     {
         return $this->belongsTo(Religion::class,'religion_id');
+    }
+
+    public function gender()
+    {
+        return $this->belongsTo(Gender::class,'gender_id');
     }
 }

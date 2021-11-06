@@ -1,3 +1,10 @@
+<style>
+    h1{
+        color:red;
+    }
+</style>
+
+
 @extends('layout.user.main')
 
 
