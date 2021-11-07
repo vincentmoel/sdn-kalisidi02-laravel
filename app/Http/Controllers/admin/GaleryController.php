@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
+use App\Http\Controllers\Controller;
 
 use App\Models\Galery;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ class GaleryController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.Category.index');
     }
 
     /**

@@ -26,22 +26,22 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Beranda</i></a>
+          <a class="nav-link" href="/">Beranda</i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tentang</a>
+          <a class="nav-link" href="/tentang">Tentang</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Guru dan Staff</a>
+          <a class="nav-link" href="/guru-staff">Guru dan Staff</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Siswa</a>
+          <a class="nav-link" href="/siswa">Siswa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Berita</a>
+          <a class="nav-link" href="/berita">Berita</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Galeri</a>
+          <a class="nav-link" href="/galeri">Galeri</a>
         </li>
       </ul>
       
