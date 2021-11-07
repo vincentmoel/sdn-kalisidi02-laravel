@@ -15,7 +15,8 @@ class GaleryController extends Controller
      */
     public function index()
     {
-        return view('admin.Category.index');
+        return view('admin.Galeri.index');
+
     }
 
     /**
