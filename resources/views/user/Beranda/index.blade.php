@@ -5,7 +5,7 @@
 </style>
 
 
-@extends('layout.user.main')
+@extends('layout.user.main',['title' => "Beranda"])
 
 
 @section('container')

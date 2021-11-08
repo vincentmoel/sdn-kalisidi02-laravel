@@ -1,4 +1,4 @@
-@extends('layout.user.main')
+@extends('layout.user.main',['title'=>'Tentang'])
 
 
 @section('container')
