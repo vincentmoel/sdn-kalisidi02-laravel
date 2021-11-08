@@ -16,6 +16,7 @@ class TeacherSeeder extends Seeder
     {
         Teacher::create([
             'name' => 'Guru1',
+            'gender_id' => '1',
             'image' => 'imgGuru1',
             'position_id' => '1',
             'nip' => '001'
@@ -23,6 +24,7 @@ class TeacherSeeder extends Seeder
 
         Teacher::create([
             'name' => 'Guru2',
+            'gender_id' => '1',
             'image' => 'imgGuru2',
             'position_id' => '2',
             'nip' => '002'
@@ -30,6 +32,7 @@ class TeacherSeeder extends Seeder
 
         Teacher::create([
             'name' => 'Guru3',
+            'gender_id' => '2',
             'image' => 'imgGuru3',
             'position_id' => '3',
             'nip' => '003'
@@ -37,6 +40,7 @@ class TeacherSeeder extends Seeder
 
         Teacher::create([
             'name' => 'Guru4',
+            'gender_id' => '2',
             'image' => 'imgGuru4',
             'position_id' => '4',
             'nip' => '004'

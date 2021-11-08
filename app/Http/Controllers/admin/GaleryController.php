@@ -15,7 +15,9 @@ class GaleryController extends Controller
      */
     public function index()
     {
-        return view('admin.Galeri.index');
+        return view('admin.Galery.index',[
+            'galeries' => Galery::all(),
+        ]);
 
     }
 

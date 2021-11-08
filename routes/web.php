@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\user\SiswaController;
 use App\Http\Controllers\user\BeritaController;
@@ -56,5 +57,7 @@ Route::group(['middleware' => ['revalidate']],function(){
     Route::resource('/admin/berita', NewsController::class);
     
     Route::resource('/admin/galeri', GaleryController::class);    
+    
+    Route::resource('/admin/users', UserController::class);    
 });
 

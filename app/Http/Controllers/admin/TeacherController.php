@@ -15,7 +15,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return view('admin.Guru-Staff.index');
+        return view('admin.Teacher-Staff.index',[
+            'teachers' => Teacher::all(),
+        ]);
         
     }
 
