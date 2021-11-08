@@ -46,14 +46,15 @@ Route::get('/galeri',[GaleriController::class,'index']);
 
 
 // For Auth User
+Route::group(['middleware' => ['revalidate']],function(){
+    Route::get('/admin',[DashboardController::class,'index']);
 
-Route::get('/admin/dashboard',[DashboardController::class,'index']);
-
-Route::resource('/admin/guru-staff', TeacherController::class);
-
-Route::resource('/admin/siswa', StudentController::class);
-
-Route::resource('/admin/berita', NewsController::class);
-
-Route::resource('/admin/galeri', GaleryController::class);
+    Route::resource('/admin/guru-staff', TeacherController::class);
+    
+    Route::resource('/admin/siswa', StudentController::class);
+    
+    Route::resource('/admin/berita', NewsController::class);
+    
+    Route::resource('/admin/galeri', GaleryController::class);    
+});
 

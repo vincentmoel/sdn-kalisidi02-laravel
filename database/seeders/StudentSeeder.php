@@ -22,5 +22,23 @@ class StudentSeeder extends Seeder
             'gender_id' => '1',
             'religion_id' => '1',
         ]);
+
+        Student::create([
+            'nisn' => '11112',
+            'name' => 'Student Kedua',
+            'birthplace' => 'Jakarta',
+            'birthdate' => '2001-11-01',
+            'gender_id' => '2',
+            'religion_id' => '2',
+        ]);
+
+        Student::create([
+            'nisn' => '11113',
+            'name' => 'Student Ketiga',
+            'birthplace' => 'Semarang',
+            'birthdate' => '2001-12-01',
+            'gender_id' => '2',
+            'religion_id' => '3',
+        ]);
     }
 }

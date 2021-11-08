@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Galery;
+use App\Models\Teacher;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,10 +16,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            UserSeeder::class,
+            TeacherSeeder::class,
             StudentSeeder::class,
-            ReligionSeeder::class,
             RoleSeeder::class,
+            ReligionSeeder::class,
             PositionSeeder::class,
+            NewsSeeder::class,
+            GenderSeeder::class,
+            GalerySeeder::class,
+
+
 
         ]);
     }

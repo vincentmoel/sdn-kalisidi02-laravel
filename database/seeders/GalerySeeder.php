@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Galery;
 use Illuminate\Database\Seeder;
 
 class GalerySeeder extends Seeder
@@ -13,6 +14,24 @@ class GalerySeeder extends Seeder
      */
     public function run()
     {
-        //
+        Galery::create([
+            'image' => 'iniimg',
+            'detail' => 'inidetail'
+        ]);
+
+        Galery::create([
+            'image' => 'iniimg',
+            'detail' => 'inidetail'
+        ]);
+
+        Galery::create([
+            'image' => 'iniimg',
+            'detail' => 'inidetail'
+        ]);
+
+        Galery::create([
+            'image' => 'iniimg',
+            'detail' => 'inidetail'
+        ]);
     }
 }
