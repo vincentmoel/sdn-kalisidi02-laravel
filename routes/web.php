@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\admin\NewsController;
 use App\Http\Controllers\user\SiswaController;
@@ -29,25 +30,39 @@ use App\Http\Controllers\user\GuruDanStaffController;
 
 Route::get('/',[BerandaController::class,'index']);
 
+
+// Authentication
+Route::group(['middleware' => ['guest','revalidate']],function(){
+    Route::get('/login',[AuthController::class,'index'])->name('login');
+});
+
+Route::post('/login',[AuthController::class,'authenticate']);
+
+Route::post('/logout',[AuthController::class,'logout']);
+
+Route::get('/logout',function(){
+    return redirect('/');
+}); 
+// Authentication End
+
+
+
+
+// User Routes
 Route::get('/tentang',[TentangController::class,'index']);
-
-
 Route::get('/guru-staff',[GuruDanStaffController::class,'index']);
-
-
 Route::get('/siswa',[SiswaController::class,'index']);
-
-
 Route::get('/berita',[BeritaController::class,'index']);
-
-
 Route::get('/galeri',[GaleriController::class,'index']);
+ // User Routes End
 
 
 
 
-// For Auth User
-Route::group(['middleware' => ['revalidate']],function(){
+
+// For Admin
+Route::group(['middleware' => ['auth','revalidate']],function(){
+
     Route::get('/admin',[DashboardController::class,'index']);
 
     Route::resource('/admin/guru-staff', TeacherController::class);
@@ -60,4 +75,5 @@ Route::group(['middleware' => ['revalidate']],function(){
     
     Route::resource('/admin/users', UserController::class);    
 });
+// For Admin End
 
