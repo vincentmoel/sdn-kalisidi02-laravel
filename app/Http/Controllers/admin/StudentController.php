@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
-
+use App\Models\Religion;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -28,7 +28,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.Student.storeStudent',[
+            'religions' => Religion::all(),
+        ]);
     }
 
     /**
@@ -39,7 +41,20 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validatedData = $request->validate([
+            'nisn' => 'required|unique:students',
+            'name' => 'required',
+            'birthplace' => 'required',
+            'birthdate' => 'required',
+            'gender' => 'required',
+            'religion_id' => 'required',
+        ]);
+        
+        
+
+        Student::create($validatedData);
+        return redirect('/admin/students')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -84,6 +99,9 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+
+        Student::destroy($student->id);
+        return redirect('/admin/students')->with('success','Data Berhasil Didelete');
+        
     }
 }

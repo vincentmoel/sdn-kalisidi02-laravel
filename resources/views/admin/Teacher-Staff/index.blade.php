@@ -30,7 +30,6 @@
 
             <?php $no = 1; ?>
             @foreach ($teachers as $teacher)
-
                 <tr>
                     <th scope="row">{{ $no++ }}</th>
                     <td>{{ $teacher->name }}</td>
@@ -45,7 +44,7 @@
                         <form action="/admin/teachers-staff/{{ $teacher->nip }}" method="post" class="d-inline">
                             @method('DELETE')
                             @csrf
-                            <button type="submit">Delete</button>
+                            <button onclick="return confirm('sure?')">Delete</button>
                         </form>
                     </td>
 

@@ -29,7 +29,7 @@ class TeacherController extends Controller
     public function create()
     {
         return view('admin.Teacher-Staff.storeTeacher', [
-            'positions' => Position::all()
+            'positions' => Position::get()
         ]);
     }
 
@@ -54,7 +54,7 @@ class TeacherController extends Controller
         // $validatedData['image'] = $request->file('image')->store('teachers-images');
 
         Teacher::create($validatedData);
-        return redirect('/admin/guru-staff')->with('success', 'Data Berhasil Ditambahkan');
+        return redirect('/admin/teachers-staff')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -77,7 +77,7 @@ class TeacherController extends Controller
     public function edit(Teacher $teacher)
     {
         return view('admin.Teacher-Staff.editTeacher', [
-            'positions' => Position::all(),
+            'positions' => Position::get(),
         ]);
     }
 
@@ -99,12 +99,9 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teacher $teacher)
+    public function destroy(Teacher $teachersStaff)
     {
-        Teacher::destroy($teacher->id);
-        dd($teacher->id);
-        return redirect('/admin/guru-staff')->with('success','Data Berhasil Didelete');
-
-        
+        Teacher::destroy($teachersStaff->id);
+        return redirect('/admin/teachers-staff')->with('success','Data Berhasil Didelete');   
     }
 }

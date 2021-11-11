@@ -102,9 +102,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        User::destroy($user->id);
-        
-        
+        User::destroy($user->id);   
         return redirect('/admin/users')->with('success','Username ' . $user->username . ' Berhasil Didelete');
     }
 }

@@ -6,7 +6,7 @@
         <h1 class="h2">Add Student</h1>
     </div>
 
-    <form action="/admin/students" method="post" enctype="multipart/form-data">
+    <form action="/admin/students" method="post">
         @csrf
         <div class="form-floating">
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name"
@@ -20,10 +20,10 @@
         </div>
 
         <div class="form-floating">
-            <input type="text" name="nip" class="form-control @error('nip') is-invalid @enderror" id="nip" placeholder="nip"
-                value="{{ old('nip') }}">
-            <label for="nip">NIP</label>
-            @error('nip')
+            <input type="text" name="nisn" class="form-control @error('nisn') is-invalid @enderror" id="nisn" placeholder="nisn"
+                value="{{ old('nisn') }}">
+            <label for="nisn">NISN</label>
+            @error('nisn')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
@@ -55,17 +55,41 @@
             @enderror
         </div>
 
+        
+        <div class="form-floating">
+            <input type="text" name="birthplace" class="form-control @error('birthplace') is-invalid @enderror" id="birthplace"
+                value="{{ old('birthplace') }}">
+            <label for="birthplace">Tempat Lahir</label>
+            @error('birthplace')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="form-floating">
+            <input type="date" name="birthdate" class="form-control @error('birthdate') is-invalid @enderror" id="birthdate"
+                value="{{ old('birthdate') }}">
+            <label for="birthdate">Tanggal Lahir</label>
+            @error('birthdate')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+
 
         <div class="mb-3">
-            <label class="form-label">Jabatan</label>
+            <label class="form-label">Agama</label>
 
-            <select class="form-select" name="position_id">
-                @foreach ($positions as $position)
-                    @if (old('position_id') == $position->id)
-                        <option value="{{ $position->id }}" selected>{{ $position->name }}</option>
+            <select class="form-select" name="religion_id">
+                @foreach ($religions as $religion)
+                    @if (old('religion_id') == $religion->id)
+                        <option value="{{ $religion->id }}" selected>{{ $religion->name }}</option>
 
                     @else
-                        <option value="{{ $position->id }}">{{ $position->name }}</option>
+                        <option value="{{ $religion->id }}">{{ $religion->name }}</option>
                     @endif
                 @endforeach
             </select>
@@ -79,17 +103,7 @@
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label class="form-label">Foto</label>
-            <img class="img-preview img-fluid mb-3 col-sm-2">
-            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
-                name="image" onchange="previewImage()">
-            @error('image')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
+        
 
 
 
