@@ -9,6 +9,8 @@ class Teacher extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     protected $with = ['position'];
 
     public function position()
@@ -16,8 +18,4 @@ class Teacher extends Model
         return $this->belongsTo(Position::class,'position_id');
     }
 
-    public function gender()
-    {
-        return $this->belongsTo(Gender::class,'gender_id');
-    }
 }

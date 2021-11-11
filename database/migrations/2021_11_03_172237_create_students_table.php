@@ -19,7 +19,7 @@ class CreateStudentsTable extends Migration
             $table->string('name');
             $table->string('birthplace');
             $table->date('birthdate');
-            $table->foreignId('gender_id');
+            $table->string('gender');
             $table->foreignId('religion_id');
             $table->timestamps();
         });

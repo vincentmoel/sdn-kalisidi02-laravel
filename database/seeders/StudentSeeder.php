@@ -19,7 +19,7 @@ class StudentSeeder extends Seeder
             'name' => 'Student Pertama',
             'birthplace' => 'Semarang',
             'birthdate' => '2001-10-01',
-            'gender_id' => '1',
+            'gender' => 'L',
             'religion_id' => '1',
         ]);
 
@@ -28,7 +28,7 @@ class StudentSeeder extends Seeder
             'name' => 'Student Kedua',
             'birthplace' => 'Jakarta',
             'birthdate' => '2001-11-01',
-            'gender_id' => '2',
+            'gender' => 'P',
             'religion_id' => '2',
         ]);
 
@@ -37,7 +37,7 @@ class StudentSeeder extends Seeder
             'name' => 'Student Ketiga',
             'birthplace' => 'Semarang',
             'birthdate' => '2001-12-01',
-            'gender_id' => '2',
+            'gender' => 'L',
             'religion_id' => '3',
         ]);
     }

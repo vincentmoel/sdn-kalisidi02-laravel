@@ -3,6 +3,13 @@
 
 @section('container')
 
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <a href="/admin/guru-staff/create" class="btn btn-primary">Tambah Data Guru / Staff</a>
 
 
@@ -11,6 +18,7 @@
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Nama</th>
+                <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Foto</th>
                 <th scope="col">Jabatan</th>
                 <th scope="col">NIP</th>
@@ -26,13 +34,14 @@
                 <tr>
                     <th scope="row">{{ $no++ }}</th>
                     <td>{{ $teacher->name }}</td>
+                    <td>{{ $teacher->gender }}</td>
                     <td>
                         <img src="{{ asset('storage/' . $teacher->image) }}" alt="" width="150px" height="150px">
                     </td>
                     <td>{{ $teacher->position->name }}</td>
                     <td>{{ $teacher->nip }}</td>
                     <td>
-                        <a href="/admin/guru-staff/{{ $teacher->id }}/edit">Edit</a>
+                        <a href="/admin/bguru-staff/{{ $teacher->id }}/edit">Edit</a>
                         <form action="/admin/guru-staff/{{ $teacher->id }}" method="post" class="d-inline">
                             @method('DELETE')
                             @csrf

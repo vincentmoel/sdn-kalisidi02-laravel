@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
             ReligionSeeder::class,
             PositionSeeder::class,
             NewsSeeder::class,
-            GenderSeeder::class,
             GalerySeeder::class,
 
 
