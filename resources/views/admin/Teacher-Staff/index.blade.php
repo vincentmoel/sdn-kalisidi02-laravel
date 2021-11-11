@@ -36,7 +36,7 @@
                     <td>{{ $teacher->name }}</td>
                     <td>{{ $teacher->gender }}</td>
                     <td>
-                        <img src="{{ asset('storage/' . $teacher->image) }}" alt="" width="150px" height="150px">
+                        <img src="{{ asset('images/uploads/' . $teacher->image) }}" alt="" width="150px" height="150px">
                     </td>
                     <td>{{ $teacher->position->name }}</td>
                     <td>{{ $teacher->nip }}</td>

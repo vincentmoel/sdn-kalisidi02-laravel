@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\admin;
+
 use App\Http\Controllers\Controller;
 use App\Models\Position;
 use App\Models\Teacher;
@@ -15,10 +16,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        return view('admin.Teacher-Staff.index',[
+        return view('admin.Teacher-Staff.index', [
             'teachers' => Teacher::all(),
         ]);
-        
     }
 
     /**
@@ -28,7 +28,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('admin.Teacher-Staff.storeTeacher',[
+        return view('admin.Teacher-Staff.storeTeacher', [
             'positions' => Position::all()
         ]);
     }
@@ -49,13 +49,12 @@ class TeacherController extends Controller
             'image' => 'required|image|file|max:5120'
         ]);
 
-        
+        $validatedData['image'] = request()->file('image')->store('teachers-images', ['disk' => 'public']);
 
-        $validatedData['image'] = $request->file('image')->store('teachers-images');
+        // $validatedData['image'] = $request->file('image')->store('teachers-images');
 
         Teacher::create($validatedData);
-        return redirect('/admin/guru-staff')->with('success','Data Berhasil Ditambahkan');
-
+        return redirect('/admin/guru-staff')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -77,7 +76,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        return view('admin.Teacher-Staff.storeTeacher',[
+        return view('admin.Teacher-Staff.storeTeacher', [
             'positions' => Position::all(),
         ]);
     }
