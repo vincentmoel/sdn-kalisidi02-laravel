@@ -32,15 +32,14 @@
 
         <div class="mb-3">
             <label class="form-label">Jenis Kelamin</label>
-
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="L" checked>
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="L" @if(empty(old('gender')) || old('gender') == "L") checked @endif>
                 <label class="form-check-label" for="flexRadioDefault1">
                     Laki - Laki
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="P">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="P" @if(old('gender') == "P") checked @endif>
                 <label class="form-check-label" for="flexRadioDefault2">
                     Perempuan
                 </label>
@@ -48,7 +47,7 @@
 
 
 
-            @error('jenis_kelamin')
+            @error('gender')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>

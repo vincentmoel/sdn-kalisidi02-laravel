@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Position;
 use App\Models\Teacher;
+use App\Models\Position;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File; 
+use Illuminate\Validation\Rule;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class TeacherController extends Controller
 {
@@ -64,7 +65,7 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function show(Teacher $teacher)
+    public function show(Teacher $teachersStaff)
     {
         //
     }
@@ -75,9 +76,10 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teacher $teacher)
+    public function edit(Teacher $teachersStaff)
     {
         return view('admin.Teacher-Staff.editTeacher', [
+            'teacher' => $teachersStaff,
             'positions' => Position::get(),
         ]);
     }
@@ -89,9 +91,33 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teacher $teacher)
+    public function update(Request $request, Teacher $teachersStaff)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => [
+                'required'
+            ],
+            'nip' => [
+                'required',
+                Rule::unique('teachers', 'nip')->ignore($teachersStaff->id)
+            
+            ],
+            'gender' => [
+                'required'
+            ],
+            'position_id' => [
+                'required'
+            ],
+        ]);
+
+        if ($request->file('image')) {
+            File::delete('images/uploads/' . $teachersStaff->image);
+            $validatedData['image'] = request()->file('image')->store('teachers-images', ['disk' => 'public']);
+        }
+
+
+        Teacher::where('id',$teachersStaff->id)->update($validatedData);
+        return redirect('/admin/teachers-staff')->with('success','Data Berhasil Diupdate');
     }
 
     /**
@@ -103,7 +129,7 @@ class TeacherController extends Controller
     public function destroy(Teacher $teachersStaff)
     {
         Teacher::destroy($teachersStaff->id);
-        File::delete('images/uploads/'.$teachersStaff->image);
-        return redirect('/admin/teachers-staff')->with('success','Data Berhasil Didelete');   
+        File::delete('images/uploads/' . $teachersStaff->image);
+        return redirect('/admin/teachers-staff')->with('success', 'Data Berhasil Didelete');
     }
 }
