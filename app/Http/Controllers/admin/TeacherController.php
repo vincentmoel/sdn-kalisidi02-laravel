@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Position;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
 
 class TeacherController extends Controller
 {
@@ -102,6 +103,7 @@ class TeacherController extends Controller
     public function destroy(Teacher $teachersStaff)
     {
         Teacher::destroy($teachersStaff->id);
+        File::delete('images/uploads/'.$teachersStaff->image);
         return redirect('/admin/teachers-staff')->with('success','Data Berhasil Didelete');   
     }
 }
