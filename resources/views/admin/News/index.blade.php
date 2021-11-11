@@ -1,6 +1,6 @@
 
 
-@extends('layout.admin.main')
+@extends('layout.admin.main',['title'=>'Berita'])
 
 
 @section('container')

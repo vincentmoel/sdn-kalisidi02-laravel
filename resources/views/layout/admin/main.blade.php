@@ -8,11 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Dashboard Template · Bootstrap v5.1</title>
 
+    
+    
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
-
-
+    
+    
+    <title>SD Negri Kalisidi 02 | {{ isset($title) ? $title : config('app.name');}}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">

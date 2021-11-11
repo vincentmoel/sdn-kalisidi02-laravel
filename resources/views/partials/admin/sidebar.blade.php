@@ -31,12 +31,15 @@
                     Galeri
                 </a>
             </li>
+
+            @if(auth()->user()->role_id == 1)
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('admin/users') ? 'active' : '' }}" href="/admin/users">
                     <span data-feather="users"></span>
                     Users
                 </a>
             </li>
+            @endif
             
         </ul>
 
