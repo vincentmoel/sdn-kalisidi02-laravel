@@ -16,22 +16,22 @@ class GalerySeeder extends Seeder
     {
         Galery::create([
             'image' => 'iniimg',
-            'detail' => 'inidetail'
+            'title' => 'inititle'
         ]);
 
         Galery::create([
             'image' => 'iniimg',
-            'detail' => 'inidetail'
+            'title' => 'inititle'
         ]);
 
         Galery::create([
             'image' => 'iniimg',
-            'detail' => 'inidetail'
+            'title' => 'inititle'
         ]);
 
         Galery::create([
             'image' => 'iniimg',
-            'detail' => 'inidetail'
+            'title' => 'inititle'
         ]);
     }
 }

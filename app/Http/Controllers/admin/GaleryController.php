@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Galery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; 
 
 class GaleryController extends Controller
 {
@@ -28,7 +29,7 @@ class GaleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.Galery.storeGalery');
     }
 
     /**
@@ -39,7 +40,16 @@ class GaleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'image' => 'required|image|file|max:5120',
+            'title' => 'required',
+        ]);
+
+        $validatedData['image'] = request()->file('image')->store('galeries-images', ['disk' => 'public']);
+
+        Galery::create($validatedData);
+        return redirect('/admin/galeries')->with('success', 'Data Berhasil Ditambahkan');
+
     }
 
     /**
@@ -84,6 +94,9 @@ class GaleryController extends Controller
      */
     public function destroy(Galery $galery)
     {
-        //
+        Galery::destroy($galery->id);
+        File::delete('images/uploads/'.$galery->image);
+        return redirect('/admin/galeries')->with('success','Data Berhasil Didelete');   
+
     }
 }
