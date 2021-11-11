@@ -6,7 +6,7 @@
         <h1 class="h2">Add Teacher</h1>
     </div>
 
-    <form action="/admin/guru-staff" method="post" enctype="multipart/form-data">
+    <form action="/admin/teachers-staff" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-floating">
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name"

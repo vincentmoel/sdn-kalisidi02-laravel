@@ -13,6 +13,11 @@ class Teacher extends Model
 
     protected $with = ['position'];
 
+    public function getRouteKeyName()
+    {
+        return 'nip';
+    }
+
     public function position()
     {
         return $this->belongsTo(Position::class,'position_id');

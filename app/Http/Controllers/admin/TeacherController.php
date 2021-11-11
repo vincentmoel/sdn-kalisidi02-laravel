@@ -43,7 +43,7 @@ class TeacherController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
-            'nip' => 'required',
+            'nip' => 'required|unique:teachers',
             'gender' => 'required',
             'position_id' => 'required',
             'image' => 'required|image|file|max:5120'
@@ -76,7 +76,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        return view('admin.Teacher-Staff.storeTeacher', [
+        return view('admin.Teacher-Staff.editTeacher', [
             'positions' => Position::all(),
         ]);
     }
@@ -101,6 +101,10 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        //
+        Teacher::destroy($teacher->id);
+        dd($teacher->id);
+        return redirect('/admin/guru-staff')->with('success','Data Berhasil Didelete');
+
+        
     }
 }

@@ -5,7 +5,7 @@
 
 @section('container')
 
-<a href="/admin/galeri/create" class="btn btn-primary">Tambah Foto</a>
+<a href="/admin/galeries/create" class="btn btn-primary">Tambah Foto</a>
 
 
 <table class="table">
@@ -28,8 +28,8 @@
                 <td><img src="{{ asset('storage/' . $galery->image) }}" alt="" width="150px" height="150px"></td>
                 <td>{{ $galery->detail }}</td>
                 <td>
-                    <a href="/admin/galeri/{{ $galery->id }}/edit">Edit</a>
-                    <form action="/admin/galeri/{{ $galery->id }}" method="post" class="d-inline">
+                    <a href="/admin/galeries/{{ $galery->id }}/edit">Edit</a>
+                    <form action="/galeries/galery/{{ $galery->id }}" method="post" class="d-inline">
                         @method('DELETE')
                         @csrf
                         <button onclick="return confirm('sure?')">Delete</button>

@@ -8,25 +8,25 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('admin/guru-staff') ? 'active' : '' }}" href="/admin/guru-staff">
+                <a class="nav-link {{ Request::is('admin/teachers-staff') ? 'active' : '' }}" href="/admin/teachers-staff">
                     <span data-feather="file"></span>
                     Guru dan Staff
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('admin/siswa') ? 'active' : '' }}" href="/admin/siswa">
+                <a class="nav-link {{ Request::is('admin/students') ? 'active' : '' }}" href="/admin/students">
                     <span data-feather="users"></span>
                     Siswa
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('admin/berita') ? 'active' : '' }}" href="/admin/berita">
+                <a class="nav-link {{ Request::is('admin/news') ? 'active' : '' }}" href="/admin/news">
                     <span data-feather="file-text"></span>
                     Berita
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('admin/galeri') ? 'active' : '' }}" href="/admin/galeri">
+                <a class="nav-link {{ Request::is('admin/galeries') ? 'active' : '' }}" href="/admin/galeries">
                     <span data-feather="camera"></span>
                     Galeri
                 </a>

@@ -4,7 +4,7 @@
 
 
 @section('container')
-<a href="/admin/siswa/create" class="btn btn-primary">Tambah Data Siswa</a>
+<a href="/admin/students/create" class="btn btn-primary">Tambah Data Siswa</a>
 
 
 <table class="table">
@@ -30,11 +30,11 @@
                 <td>{{ $student->nisn }}</td>
                 <td>{{ $student->name }}</td>
                 <td>{{ $student->birthplace  }}, {{  date_format(new DateTime($student->birthdate), 'd F Y') }}</td>
-                <td>{{ $student->gender->name }}</td>
+                <td>{{ $student->gender }}</td>
                 <td>{{ $student->religion->name }}</td>
                 <td>
-                    <a href="/admin/siswa/{{ $student->id }}/edit">Edit</a>
-                    <form action="/admin/siswa/{{ $student->id }}" method="post" class="d-inline">
+                    <a href="/admin/students/{{ $student->id }}/edit">Edit</a>
+                    <form action="/admin/students/{{ $student->id }}" method="post" class="d-inline">
                         @method('DELETE')
                         @csrf
                         <button onclick="return confirm('sure?')">Delete</button>

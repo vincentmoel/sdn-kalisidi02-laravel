@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <a href="/admin/guru-staff/create" class="btn btn-primary">Tambah Data Guru / Staff</a>
+    <a href="/admin/teachers-staff/create" class="btn btn-primary">Tambah Data Guru / Staff</a>
 
 
     <table class="table">
@@ -41,11 +41,11 @@
                     <td>{{ $teacher->position->name }}</td>
                     <td>{{ $teacher->nip }}</td>
                     <td>
-                        <a href="/admin/bguru-staff/{{ $teacher->id }}/edit">Edit</a>
-                        <form action="/admin/guru-staff/{{ $teacher->id }}" method="post" class="d-inline">
+                        <a href="/admin/teachers-staff/{{ $teacher->nip }}/edit">Edit</a>
+                        <form action="/admin/teachers-staff/{{ $teacher->nip }}" method="post" class="d-inline">
                             @method('DELETE')
                             @csrf
-                            <button onclick="return confirm('sure?')">Delete</button>
+                            <button type="submit">Delete</button>
                         </form>
                     </td>
 

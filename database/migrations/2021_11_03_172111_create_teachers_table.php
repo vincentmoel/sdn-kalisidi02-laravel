@@ -19,7 +19,7 @@ class CreateTeachersTable extends Migration
             $table->string('gender');
             $table->string('image');
             $table->foreignId('position_id');
-            $table->string('nip');
+            $table->string('nip')->unique();
             $table->timestamps();
         });
     }

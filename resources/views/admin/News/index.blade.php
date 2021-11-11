@@ -4,7 +4,7 @@
 
 
 @section('container')
-<a href="/admin/berita/create" class="btn btn-primary">Tambah Berita</a>
+<a href="/admin/news/create" class="btn btn-primary">Tambah Berita</a>
 
 
 <table class="table">
@@ -27,8 +27,8 @@
                 <td>{{ $news->title }}</td>
                 <td>{{ $news->excerpt }}</td>
                 <td>
-                    <a href="/admin/berita/{{ $news->id }}/edit">Edit</a>
-                    <form action="/admin/berita/{{ $news->id }}" method="post" class="d-inline">
+                    <a href="/admin/news/{{ $news->id }}/edit">Edit</a>
+                    <form action="/admin/news/{{ $news->id }}" method="post" class="d-inline">
                         @method('DELETE')
                         @csrf
                         <button onclick="return confirm('sure?')">Delete</button>
