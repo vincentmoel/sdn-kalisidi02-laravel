@@ -20,15 +20,15 @@
 
 
         <?php $no = 1; ?>
-        @foreach ($news as $news)
+        @foreach ($news as $oneNews)
 
             <tr>
                 <th scope="row">{{ $no++ }}</th>
-                <td>{{ $news->title }}</td>
-                <td>{{ $news->excerpt }}</td>
+                <td>{{ $oneNews->title }}</td>
+                <td>{{ $oneNews->excerpt }}</td>
                 <td>
-                    <a href="/admin/news/{{ $news->id }}/edit">Edit</a>
-                    <form action="/admin/news/{{ $news->id }}" method="post" class="d-inline">
+                    <a href="/admin/news/{{ $oneNews->id }}/edit">Edit</a>
+                    <form action="/admin/news/{{ $oneNews->id }}" method="post" class="d-inline">
                         @method('DELETE')
                         @csrf
                         <button onclick="return confirm('sure?')">Delete</button>
@@ -44,5 +44,8 @@
 
     </tbody>
 </table>
+
+
+{{ $news->links() }}
 
 @endsection

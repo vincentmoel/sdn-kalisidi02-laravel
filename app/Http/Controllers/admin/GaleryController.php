@@ -16,8 +16,11 @@ class GaleryController extends Controller
      */
     public function index()
     {
+
+        $showGaleries = Galery::latest()->paginate(15);
+
         return view('admin.Galery.index',[
-            'galeries' => Galery::all(),
+            'galeries' => $showGaleries,
         ]);
 
     }

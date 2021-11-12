@@ -18,8 +18,11 @@ class TeacherController extends Controller
      */
     public function index()
     {
+
+        $showTeachers = Teacher::orderBy('position_id','asc')->paginate(10);
+
         return view('admin.Teacher-Staff.index', [
-            'teachers' => Teacher::all(),
+            'teachers' => $showTeachers,
         ]);
     }
 

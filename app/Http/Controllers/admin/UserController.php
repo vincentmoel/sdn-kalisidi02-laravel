@@ -17,8 +17,13 @@ class UserController extends Controller
      */
     public function index()
     {
+
+        $showUsers = User::where('role_id','=','2')
+            ->latest()
+            ->paginate(10);
+
         return view('admin.Users.index',[
-            'users' => User::all()->where('role_id','=','2'),
+            'users' => $showUsers,
         ]);
     }
 

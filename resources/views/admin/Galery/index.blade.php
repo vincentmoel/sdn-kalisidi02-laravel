@@ -51,4 +51,6 @@
         </tbody>
     </table>
 
+    {{ $galeries->links() }}
+
 @endsection

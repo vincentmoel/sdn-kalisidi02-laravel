@@ -15,8 +15,11 @@ class StudentController extends Controller
      */
     public function index()
     {
+
+        $showStudents = Student::latest()->paginate(20);
+
         return view('admin.Student.index',[
-            'students' => Student::all(),
+            'students' => $showStudents,
         ]);
         
     }
