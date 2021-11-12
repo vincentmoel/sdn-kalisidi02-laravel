@@ -71,7 +71,9 @@ class GaleryController extends Controller
      */
     public function edit(Galery $galery)
     {
-        //
+        return view('admin.Galery.editGalery',[
+            'galery' => $galery,
+        ]);
     }
 
     /**
@@ -79,11 +81,23 @@ class GaleryController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Galery  $galery
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Responsei
      */
     public function update(Request $request, Galery $galery)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'image' => 'image|file|max:5120'
+        ]);
+
+        if ($request->file('image')) {
+            File::delete('images/uploads/' . $galery->image);
+            $validatedData['image'] = request()->file('image')->store('galeries-images', ['disk' => 'public']);
+        }
+
+
+        Galery::where('id',$galery->id)->update($validatedData);
+        return redirect('/admin/galeries')->with('success','Data Berhasil Diupdate');
     }
 
     /**

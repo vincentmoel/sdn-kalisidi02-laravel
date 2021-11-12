@@ -76,7 +76,10 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('admin.Student.editStudent',[
+            'student' => $student,
+            'religions' => Religion::get(),
+        ]);
     }
 
     /**
