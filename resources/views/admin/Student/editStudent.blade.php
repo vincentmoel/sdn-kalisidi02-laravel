@@ -23,7 +23,7 @@
         <div class="form-floating">
             <input type="text" name="nisn" class="form-control @error('nisn') is-invalid @enderror" id="nisn" placeholder="nisn"
                 value="{{ old('nisn',$student->nisn) }}">
-            <label for="nisn">nisn</label>
+            <label for="nisn">NISN</label>
             @error('nisn')
                 <div class="invalid-feedback">
                     {{ $message }}

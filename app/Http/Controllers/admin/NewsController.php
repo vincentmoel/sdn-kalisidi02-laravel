@@ -87,6 +87,8 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        //
+        News::destroy($news->id);
+        return redirect('/admin/news')->with('success', 'Data Berhasil Didelete');
+        
     }
 }

@@ -1,51 +1,58 @@
-
-
 @extends('layout.admin.main',['title'=>'Berita'])
 
 
 @section('container')
-<a href="/admin/news/create" class="btn btn-primary">Tambah Berita</a>
+
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">No</th>
-            <th scope="col">Title</th>
-            <th scope="col">Isi</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
+    <a href="/admin/news/create" class="btn btn-primary">Tambah Berita</a>
 
 
-        <?php $no = 1; ?>
-        @foreach ($news as $oneNews)
-
+    <table class="table">
+        <thead>
             <tr>
-                <th scope="row">{{ $no++ }}</th>
-                <td>{{ $oneNews->title }}</td>
-                <td>{{ $oneNews->excerpt }}</td>
-                <td>
-                    <a href="/admin/news/{{ $oneNews->id }}/edit">Edit</a>
-                    <form action="/admin/news/{{ $oneNews->id }}" method="post" class="d-inline">
-                        @method('DELETE')
-                        @csrf
-                        <button onclick="return confirm('sure?')">Delete</button>
-                    </form>
-                </td>
-
+                <th scope="col">No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Isi</th>
+                <th scope="col">Action</th>
             </tr>
-        @endforeach
+        </thead>
+        <tbody>
+
+
+            <?php $no = 1; ?>
+            @foreach ($news as $oneNews)
+
+                <tr>
+                    <th scope="row">{{ $no++ }}</th>
+                    <td>{{ $oneNews->title }}</td>
+                    <td>{{ $oneNews->excerpt }}</td>
+                    <td>
+                        <a href="/admin/news/{{ $oneNews->id }}/edit">Edit</a>
+                        <form action="/admin/news/{{ $oneNews->id }}" method="post" class="d-inline">
+                            @method('DELETE')
+                            @csrf
+                            <button onclick="return confirm('sure?')">Delete</button>
+                        </form>
+                    </td>
+
+                </tr>
+            @endforeach
 
 
 
 
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
 
-{{ $news->links() }}
+    {{ $news->links() }}
 
 @endsection

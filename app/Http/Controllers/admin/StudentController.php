@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-use App\Http\Controllers\Controller;
-use App\Models\Religion;
 use App\Models\Student;
+use App\Models\Religion;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\Http\Controllers\Controller;
 
 class StudentController extends Controller
 {
@@ -94,7 +95,22 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+        $validatedData = $request->validate([
+            'nisn' => [
+                'required',
+                Rule::unique('students', 'nisn')->ignore($student->id)
+            ],
+            'name' => 'required',
+            'birthplace' => 'required',
+            'birthdate' => 'required',
+            'gender' => 'required',
+            'religion_id' => 'required',
+        ]);
+
+        Student::where('id',$student->id)->update($validatedData);
+        return redirect('/admin/students')->with('success','Data Berhasil Diupdate');
+
+
     }
 
     /**
