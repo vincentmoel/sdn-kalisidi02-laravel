@@ -1,10 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-use App\Http\Controllers\Controller;
 
 use App\Models\News;
+
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+
 
 class NewsController extends Controller
 {
@@ -18,10 +22,9 @@ class NewsController extends Controller
 
         $showNews = News::latest()->paginate(10);
 
-        return view('admin.News.index',[
+        return view('admin.News.index', [
             'news' => $showNews,
         ]);
-        
     }
 
     /**
@@ -31,7 +34,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.News.storeNews');
     }
 
     /**
@@ -42,7 +45,18 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'slug' => 'required|unique:news',
+            'image' => 'required|image|file|max:5120',
+            'body' => 'required'
+        ]);
+
+        $validatedData['image'] = request()->file('image')->store('news-images', ['disk' => 'public']);
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200, '...');
+
+        News::create($validatedData);
+        return redirect('/admin/news')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -53,7 +67,9 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+        return view('admin.News.showNews', [
+            'news' => $news,
+        ]);
     }
 
     /**
@@ -64,7 +80,9 @@ class NewsController extends Controller
      */
     public function edit(News $news)
     {
-        //
+        return view('admin.News.editNews', [
+            'news' => $news
+        ]);
     }
 
     /**
@@ -76,7 +94,26 @@ class NewsController extends Controller
      */
     public function update(Request $request, News $news)
     {
-        //
+        $rules = [
+            'title' => 'required',
+            'image' => 'image|file|max:5120',
+            'body' => 'required'
+        ];
+
+        if ($request->slug != $news->slug) {
+            $rules['slug'] = 'required|unique:news';
+        }
+
+        $validatedData = $request->validate($rules);
+        if ($request->file('image')) {
+            File::delete('images/uploads/' . $news->image);
+            $validatedData['image'] = request()->file('image')->store('news-images', ['disk' => 'public']);
+        
+        }
+        News::where('id', $news->id)
+            ->update($validatedData);
+
+        return redirect('/admin/news')->with('success', 'Data Berhasil Diupdate');
     }
 
     /**
@@ -89,6 +126,5 @@ class NewsController extends Controller
     {
         News::destroy($news->id);
         return redirect('/admin/news')->with('success', 'Data Berhasil Didelete');
-        
     }
 }

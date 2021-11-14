@@ -9,12 +9,12 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
 
-    
-    
+
+
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
-    
-    
-    <title>SD Negri Kalisidi 02 | {{ isset($title) ? $title : config('app.name');}}</title>
+
+
+    <title>SD Negri Kalisidi 02 | {{ isset($title) ? $title : config('app.name') }}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -44,6 +44,23 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 
+
+    {{-- Trix Editor --}}
+    <link rel="stylesheet" type="text/css" href="/css/trix/trix.css">
+    <script type="text/javascript" src="/js/trix/trix.js"></script>
+
+    <style>
+        trix-toolbar [data-trix-button-group="file-tools"] {
+            display: none;
+        }
+
+        trix-editor {
+            height: 200px !important;
+            max-height: 200px !important;
+            overflow-y: auto !important;
+        }
+
+    </style>
 </head>
 
 <body>

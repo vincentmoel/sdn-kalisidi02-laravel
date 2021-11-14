@@ -56,7 +56,6 @@ class TeacherController extends Controller
 
         $validatedData['image'] = request()->file('image')->store('teachers-images', ['disk' => 'public']);
 
-        // $validatedData['image'] = $request->file('image')->store('teachers-images');
 
         Teacher::create($validatedData);
         return redirect('/admin/teachers-staff')->with('success', 'Data Berhasil Ditambahkan');

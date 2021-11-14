@@ -18,9 +18,10 @@
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Title</th>
-                <th scope="col">Isi</th>
-                <th scope="col">Action</th>
+                <th scope="col">Gambar</th>
+                <th scope="col">Judul</th>
+                <th scope="col">Isi Berita</th>
+                <th scope="col">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -31,11 +32,15 @@
 
                 <tr>
                     <th scope="row">{{ $no++ }}</th>
-                    <td>{{ $oneNews->title }}</td>
-                    <td>{{ $oneNews->excerpt }}</td>
                     <td>
-                        <a href="/admin/news/{{ $oneNews->id }}/edit">Edit</a>
-                        <form action="/admin/news/{{ $oneNews->id }}" method="post" class="d-inline">
+                        <img src="{{ asset('images/uploads/' . $oneNews->image) }}" alt="" width="150px" height="150px">
+                    </td>
+                    <td>{{ $oneNews->title }}</td>
+                    <td>{!! $oneNews->excerpt !!}</td>
+                    <td>
+                        <a href="/admin/news/{{ $oneNews->slug }}/edit">Edit</a>
+                        <a href="/admin/news/{{ $oneNews->slug }}">show</a>
+                        <form action="/admin/news/{{ $oneNews->slug }}" method="post" class="d-inline">
                             @method('DELETE')
                             @csrf
                             <button onclick="return confirm('sure?')">Delete</button>

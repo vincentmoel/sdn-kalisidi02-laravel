@@ -18,7 +18,7 @@ class NewsSeeder extends Seeder
             'title' => 'Berita Pertama',
             'slug' => 'berita-pertama',
             'image' => 'imgBeritaPertama',
-            'excerpt' => 'beritaExcerpt',
+            'excerpt' => '<div>beritaExcerpt</div>',
             'body' => 'iniberitabody'
         ]);
 
@@ -26,7 +26,7 @@ class NewsSeeder extends Seeder
             'title' => 'Berita kedua',
             'slug' => 'berita-kedua',
             'image' => 'imgBeritakedua',
-            'excerpt' => 'beritaExcerpt',
+            'excerpt' => '<div>beritaExcerpt</div>',
             'body' => 'iniberitabody'
         ]);
 
@@ -34,7 +34,7 @@ class NewsSeeder extends Seeder
             'title' => 'Berita ketiga',
             'slug' => 'berita-ketiga',
             'image' => 'imgBeritaketiga',
-            'excerpt' => 'beritaExcerpt',
+            'excerpt' => '<div>beritaExcerpt</div>',
             'body' => 'iniberitabody'
         ]);
 
@@ -42,7 +42,7 @@ class NewsSeeder extends Seeder
             'title' => 'Berita keempat',
             'slug' => 'berita-keempat',
             'image' => 'imgBeritakeempat',
-            'excerpt' => 'beritaExcerpt',
+            'excerpt' => '<div>beritaExcerpt</div>',
             'body' => 'iniberitabody'
         ]);
     }

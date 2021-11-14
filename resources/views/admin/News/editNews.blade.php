@@ -6,13 +6,13 @@
         <h1 class="h2">Add Berita</h1>
     </div>
 
-    <form action="/admin/news" method="post" enctype="multipart/form-data">
+    <form action="/admin/news/{{ $news->slug }}" method="post" enctype="multipart/form-data">
+        @method('put')
         @csrf
-        
 
         <div class="form-floating">
             <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="title"
-                value="{{ old('title') }}">
+                value="{{ old('title',$news->title) }}">
             <label for="title">Title</label>
             @error('title')
                 <div class="invalid-feedback">
@@ -21,13 +21,12 @@
             @enderror
         </div>
         
-        <input type="text" id='slug' name="slug"  value="{{ old('slug') }}">
+        <input type="text" id='slug' name="slug"  value="{{ old('slug',$news->slug) }}">
         
         <div class="mb-3">
             <label class="form-label">Foto</label>
             <img class="img-preview img-fluid mb-3 col-sm-2">
-            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
-                name="image" onchange="previewImage()">
+            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
             @error('image')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -38,7 +37,7 @@
 
         <div class="mb-3">
             <label class="form-label">Body</label>
-            <input class="form-control @error('body') is-invalid @enderror" type="hidden" id="body" name="body" value="{{ old('body') }}">
+            <input class="form-control @error('body') is-invalid @enderror" type="hidden" id="body" name="body" value="{{ old('body',$news->body) }}">
             @error('body')
                 <div class="invalid-feedback">
                     {{ $message }}
