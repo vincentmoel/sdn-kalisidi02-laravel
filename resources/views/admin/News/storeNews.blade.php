@@ -21,7 +21,6 @@
             @enderror
         </div>
         
-        <input type="text" id='slug' name="slug"  value="{{ old('slug') }}">
         
         <div class="mb-3">
             <label class="form-label">Foto</label>

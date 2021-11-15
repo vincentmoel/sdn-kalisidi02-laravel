@@ -47,13 +47,14 @@ class NewsController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required',
-            'slug' => 'required|unique:news',
             'image' => 'required|image|file|max:5120',
             'body' => 'required'
         ]);
 
         $validatedData['image'] = request()->file('image')->store('news-images', ['disk' => 'public']);
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200, '...');
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 50, '...');
+        $slug = new News();
+        $validatedData['slug'] = $slug->setSlugAttribute($request->title);
 
         News::create($validatedData);
         return redirect('/admin/news')->with('success', 'Data Berhasil Ditambahkan');
@@ -100,9 +101,6 @@ class NewsController extends Controller
             'body' => 'required'
         ];
 
-        if ($request->slug != $news->slug) {
-            $rules['slug'] = 'required|unique:news';
-        }
 
         $validatedData = $request->validate($rules);
         if ($request->file('image')) {
@@ -110,6 +108,15 @@ class NewsController extends Controller
             $validatedData['image'] = request()->file('image')->store('news-images', ['disk' => 'public']);
         
         }
+
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 50, '...');
+
+        if($request->title != $news->title)
+        {
+            $slug = new News();
+            $validatedData['slug'] = $slug->setSlugAttribute($request->title);
+        }
+
         News::where('id', $news->id)
             ->update($validatedData);
 
@@ -125,6 +132,7 @@ class NewsController extends Controller
     public function destroy(News $news)
     {
         News::destroy($news->id);
+        File::delete('images/uploads/' . $news->image);
         return redirect('/admin/news')->with('success', 'Data Berhasil Didelete');
     }
 }

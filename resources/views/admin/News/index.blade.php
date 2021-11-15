@@ -39,7 +39,6 @@
                     <td>{!! $oneNews->excerpt !!}</td>
                     <td>
                         <a href="/admin/news/{{ $oneNews->slug }}/edit">Edit</a>
-                        <a href="/admin/news/{{ $oneNews->slug }}">show</a>
                         <form action="/admin/news/{{ $oneNews->slug }}" method="post" class="d-inline">
                             @method('DELETE')
                             @csrf
