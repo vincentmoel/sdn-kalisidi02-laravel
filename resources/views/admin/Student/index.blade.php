@@ -2,11 +2,19 @@
 
 
 @section('container')
+
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <a href="/admin/students/create" class="btn btn-primary">Tambah Data Siswa</a>
 
     <form action="/admin/students" method="GET">
         <select name='show' onchange='this.form.submit()'>
-            @for ($i = 10; $i <= 40; $i+=10)
+            @for ($i = 10; $i <= 40; $i += 10)
                 <option value={{ $i }} @if (request('show') == $i) selected @endif>{{ $i }}</option>
             @endfor
         </select>
