@@ -15,7 +15,7 @@
 
     <form action="/admin/students" method="GET">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Nama Siswa" aria-describedby="button-addon2" name="search"
+            <input type="text" class="form-control" placeholder="Cari Siswa" aria-describedby="button-addon2" name="search"
                 value="{{ request('search') }}">
 
         </div>

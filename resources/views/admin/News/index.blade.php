@@ -13,6 +13,24 @@
 
     <a href="/admin/news/create" class="btn btn-primary">Tambah Berita</a>
 
+    <form action="/admin/news" method="GET">
+        <select name='show' onchange='this.form.submit()'>
+            @for ($i = 10; $i <= 40; $i+=10)
+                <option value={{ $i }} @if (request('show') == $i) selected @endif>{{ $i }}</option>
+            @endfor
+        </select>
+        <input type="hidden" name="search" value="{{ request('search') }}">
+    </form>
+
+    <form action="/admin/news" method="GET">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Cari Berita" aria-describedby="button-addon2" name="search"
+                value="{{ request('search') }}">
+
+        </div>
+        <button class="btn btn-dark" type="submit" id="button-addon2">Search</button>
+    </form>
+
 
     <table class="table">
         <thead>

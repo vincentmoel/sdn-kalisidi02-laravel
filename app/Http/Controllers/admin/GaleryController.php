@@ -17,7 +17,10 @@ class GaleryController extends Controller
     public function index()
     {
 
-        $showGaleries = Galery::latest()->paginate(15);
+        $showGaleries = Galery::latest()
+            ->filter(request(['search']))
+            ->paginate(request('show') ?? 10)
+            ->withQueryString();
 
         return view('admin.Galery.index',[
             'galeries' => $showGaleries,

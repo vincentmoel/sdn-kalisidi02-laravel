@@ -20,7 +20,10 @@ class NewsController extends Controller
     public function index()
     {
 
-        $showNews = News::latest()->paginate(10);
+        $showNews = News::latest()
+            ->filter(request(['search']))
+            ->paginate(request('show') ?? 10)
+            ->withQueryString();
 
         return view('admin.News.index', [
             'news' => $showNews,
