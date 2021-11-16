@@ -55,10 +55,11 @@
         }
 
         trix-editor {
-            height: 200px !important;
-            max-height: 200px !important;
+            /* height: 250px !important; */
+            max-height: 450px !important;
             overflow-y: auto !important;
         }
+
 
     </style>
 </head>
