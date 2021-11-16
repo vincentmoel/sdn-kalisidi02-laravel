@@ -93,7 +93,7 @@
 
 
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Tambahkan</button>
     </form>
 
 

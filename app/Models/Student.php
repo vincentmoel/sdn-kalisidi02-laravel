@@ -14,7 +14,11 @@ class Student extends Model
 
     protected $with = ['religion'];
 
-    
+    public function getRouteKeyName()
+    {
+        return 'nisn';
+    }
+
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function ($query, $search) {

@@ -6,7 +6,7 @@
         <h1 class="h2">Add student</h1>
     </div>
 
-    <form action="/admin/students/{{ $student->id }}" method="post">
+    <form action="/admin/students/{{ $student->nisn }}" method="post">
         @method('put')
         @csrf
         <div class="form-floating">
@@ -109,7 +109,7 @@
 
 
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Update</button>
     </form>
 
 

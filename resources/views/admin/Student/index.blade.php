@@ -48,8 +48,8 @@
                     <td>{{ $student->gender }}</td>
                     <td>{{ $student->religion->name }}</td>
                     <td>
-                        <a href="/admin/students/{{ $student->id }}/edit">Edit</a>
-                        <form action="/admin/students/{{ $student->id }}" method="post" class="d-inline">
+                        <a href="/admin/students/{{ $student->nisn }}/edit">Edit</a>
+                        <form action="/admin/students/{{ $student->nisn }}" method="post" class="d-inline">
                             @method('DELETE')
                             @csrf
                             <button onclick="return confirm('sure?')">Delete</button>

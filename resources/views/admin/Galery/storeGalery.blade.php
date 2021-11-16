@@ -3,7 +3,7 @@
 @section('container')
 
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Add Teacher</h1>
+        <h1 class="h2">Add Picture</h1>
     </div>
 
     <form action="/admin/galeries" method="post" enctype="multipart/form-data">
@@ -37,7 +37,7 @@
 
 
 
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Tambahkan</button>
     </form>
 
 
