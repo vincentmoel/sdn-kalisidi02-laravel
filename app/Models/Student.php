@@ -14,6 +14,15 @@ class Student extends Model
 
     protected $with = ['religion'];
 
+    
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            return $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('nisn','like','%'.$search.'%');
+        });
+    }
+
     public function religion()
     {
         return $this->belongsTo(Religion::class,'religion_id');

@@ -16,8 +16,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-
-        $showStudents = Student::latest()->paginate(20);
+        $showStudents = Student::latest()
+            ->filter(request(['search']))
+            ->paginate(request('show') ?? 10)
+            ->withQueryString();
 
         return view('admin.Student.index',[
             'students' => $showStudents,
