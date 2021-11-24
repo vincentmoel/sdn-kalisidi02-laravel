@@ -20,7 +20,7 @@
     <div class="nav-placeholder fixed-top">
       @include('partials.user.navbar')
     </div>
-    <div class="container">
+    <div class="container-fluid px-0">
         @yield('container')
     </div>
 

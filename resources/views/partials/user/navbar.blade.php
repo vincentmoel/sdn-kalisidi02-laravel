@@ -15,10 +15,10 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-primary navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary navbar-inverse navbar-fixed-top" style="background-image: linear-gradient(to bottom, #79b4b7, #63a3a6, #4b9195, #328185, #107075);">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="images/logo-navbar.png" class="img-fluid" style="width: 80%"  alt="">
+      <img src="images/logo-navbar.png" class="img-fluid" style="width: 70%"  alt="">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
