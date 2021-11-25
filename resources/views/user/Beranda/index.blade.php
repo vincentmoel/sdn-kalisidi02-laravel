@@ -98,6 +98,18 @@
             width   : 100%;
         }
     }
+
+    .card-img-top {
+        width: 100%;
+        height: 196px;
+        object-fit: cover;
+    }
+
+    .pict-berita img {
+        width: 100%;
+        height: 119px;
+        object-fit: cover;
+    }
 </style>
 
 
@@ -205,8 +217,8 @@
                         <div class="col berita">
                             <a href="/berita/{{ $news->slug }}" class="card h-100 " >
                                 <div class="row">
-                                    <div class="col-lg-4">
-                                        <img src="{{ asset('images/uploads/' . $news->image) }}" class="img-fluid rounded-start" alt="">
+                                    <div class="col-lg-4 pict-berita">
+                                        <img src="{{ asset('images/uploads/' . $news->image) }}" class="img-fluid rounded-start " alt="">
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="card-body">
