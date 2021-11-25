@@ -53,6 +53,7 @@ Route::get('/tentang',[TentangController::class,'index']);
 Route::get('/guru-staff',[GuruDanStaffController::class,'index']);
 Route::get('/siswa',[SiswaController::class,'index']);
 Route::get('/berita',[BeritaController::class,'index']);
+Route::get('/berita/{news:slug}',[BeritaController::class,'show']);
 Route::get('/galeri',[GaleriController::class,'index']);
  // User Routes End
 

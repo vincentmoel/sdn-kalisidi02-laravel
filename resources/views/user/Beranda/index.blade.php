@@ -200,51 +200,25 @@
                     </div>
                 </div>
                 <div class="row row-cols-1 g-3">
-                    <div class="col berita">
-                        <a href="" class="card h-100 " >
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <img src="/images/slider/berita-pict.png" class="img-fluid rounded-start" alt="">
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">judul berita</h5>
-                                        <p class="card-text" style="font-size: 16px">lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
+                    @foreach ($recentNews as $news)
+                        
+                        <div class="col berita">
+                            <a href="/berita/{{ $news->slug }}" class="card h-100 " >
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <img src="{{ asset('images/uploads/' . $news->image) }}" class="img-fluid rounded-start" alt="">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ $news->title }}</h5>
+                                            <p class="card-text" style="font-size: 16px">{!! $news->excerpt !!}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col berita">
-                        <a href="" class="card h-100 " >
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <img src="/images/slider/berita-pict.png" class="img-fluid rounded-start" alt="">
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">judul berita</h5>
-                                        <p class="card-text" style="font-size: 16px">lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col berita">
-                        <a href="" class="card h-100 " >
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <img src="/images/slider/berita-pict.png" class="img-fluid rounded-start" alt="">
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">judul berita</h5>
-                                        <p class="card-text" style="font-size: 16px">lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    @endforeach
+                    
                     <div class="col">
                         <div href="" class="card h-100 border-0" >
                             <div class="row">
@@ -266,30 +240,17 @@
                         <h3>GALERI</h3>
                     </div>
                     <div class="row row-cols-lg-2 row-cols-1 g-2">
-                        <div class="col berita">
-                            <div class="card">
-                                <img src="/images/slider/berita-pict.png" class="card-img-top" id="myImg" alt="ini foto 1">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">judul media</h5>
+                        @foreach ($recentGaleries as $galery)
+                            <div class="col berita">
+                                <div class="card">
+                                    <img src="{{ asset('images/uploads/' . $galery->image) }}" class="card-img-top" id="myImg" alt="ini foto 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">{{ $galery->title }}</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col berita">
-                            <div class="card">
-                                <img src="/images/slider/berita-pict.png" class="card-img-top" id="myImg" alt="ini foto 2">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">judul media</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col berita">
-                            <div class="card">
-                                <img src="/images/slider/berita-pict.png" class="card-img-top" id="myImg" alt="ini foto 3">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">judul media</h5>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        
                         <div class="col text-center">
                             
                                     <a href="/galeri" class="btn btn-lg btn-primary py-3" style="background-image: linear-gradient(to right, #173656, #1a4571, #1d558d, #2165a9, #2776c7); width: 90%; margin-top: 100px">Galeri Lainnya</a>
