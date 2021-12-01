@@ -1,7 +1,7 @@
 <style>
 
     .berita .card {
-        background-color: #E4E4E4;
+        background-color: #EFEFEF;
     }
 
     .berita a {
@@ -136,7 +136,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <div class="row justify-content-center">
                         <div class="col-4">
-                            <a href="/guru-staff" class="btn btn-lg text-light py-3 border border-light" style="width: 80%; background-color: #79B4B7"><b>Daftar<br>Guru dan Staff</b></a>
+                            <a href="/guru-staff" class="btn btn-lg text-light py-3 border border-light" style="width: 80%; background-image: linear-gradient(to right, #6166b3, #3b80c7, #0098d1, #00add2, #32c1cd); border-radius: 10px"><b>Daftar Guru dan Staff</b></a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <div class="row justify-content-center">
                         <div class="col-4">
-                            <a href="/guru-staff" class="btn btn-lg text-light py-3 border border-light" style="width: 80%; background-color: #79B4B7"><b>Daftar Siswa</b></a>
+                            <a href="/guru-staff" class="btn btn-lg text-light py-3 border border-light" style="width: 80%; background-image: linear-gradient(to right, #6166b3, #3b80c7, #0098d1, #00add2, #32c1cd); border-radius: 10px"><b>Daftar Siswa</b></a>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <div class="row justify-content-center">
                         <div class="col-4">
-                            <a href="/guru-staff" class="btn btn-lg text-light py-3 border border-light" style="width: 80%; background-color: #79B4B7"><b>Lihat Galeri Selengkapnya</b></a>
+                            <a href="/guru-staff" class="btn btn-lg text-light py-3 border border-light" style="width: 80%; background-image: linear-gradient(to right, #6166b3, #3b80c7, #0098d1, #00add2, #32c1cd); border-radius: 10px"><b>Galeri Selengkapnya</b></a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
 
 
     {{-- profil singkat --}}
-    <div class="container-fluid" style="background-color: #89B5AF">
+    <div class="container-fluid" style="background-image: linear-gradient(to right, #89b5af, #76b4af, #60b2b0, #43b0b3, #00aeb7);">
         <div class="container w-75 mx-auto py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12 text-center">
@@ -236,7 +236,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card-body text-center">
-                                        <a href="/berita" class="btn btn-lg btn-primary" style="background-image: linear-gradient(to right, #173656, #1a4571, #1d558d, #2165a9, #2776c7); width: 60%">Berita Lainnya</a>
+                                        <a href="/berita" class="btn btn-lg btn-primary py-3" style="background-image: linear-gradient(to right, #173656, #1a4571, #1d558d, #2165a9, #2776c7); width: 50%">Berita Lainnya</a>
                                     </div>
                                 </div>
                             </div>
