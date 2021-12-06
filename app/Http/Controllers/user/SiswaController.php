@@ -16,6 +16,8 @@ class SiswaController extends Controller
 
         return view('user.Siswa.index',[
             'students' => $showStudents,
+            'totalStudents' => Student::count()
+
         ]);
     }
 }

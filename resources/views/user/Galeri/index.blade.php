@@ -21,54 +21,16 @@
 
     <div class="container py-5">
         <div class="row w-75 mx-auto justify-content-center">
-            <div class="col-lg-3 col-12 galeri my-3" >
-                <button type="button" class="figure border btn" data-bs-toggle="modal" data-bs-target="#galeriModal"  style="border-radius: 5px">
-                    <img src="/images/gurustaff-ex.png" class="img-fluid" alt="" >
-                    <figcaption class="figure-caption text-center py-3" style="font-size: 16px">judul foto</figcaption>
-                </button>
-            </div>
-            <div class="col-lg-3 col-12 galeri my-3" >
-                <button type="button" class="figure border btn" data-bs-toggle="modal" data-bs-target="#galeriModal"  style="border-radius: 5px">
-                    <img src="/images/gurustaff-ex.png" class="img-fluid" alt="" >
-                    <figcaption class="figure-caption text-center py-3" style="font-size: 16px">judul foto</figcaption>
-                </button>
-            </div>
-            <div class="col-lg-3 col-12 galeri my-3" >
-                <button type="button" class="figure border btn" data-bs-toggle="modal" data-bs-target="#galeriModal"  style="border-radius: 5px">
-                    <img src="/images/gurustaff-ex.png" class="img-fluid" alt="" >
-                    <figcaption class="figure-caption text-center py-3" style="font-size: 16px">judul foto</figcaption>
-                </button>
-            </div>
-            <div class="col-lg-3 col-12 galeri my-3" >
-                <button type="button" class="figure border btn" data-bs-toggle="modal" data-bs-target="#galeriModal"  style="border-radius: 5px">
-                    <img src="/images/gurustaff-ex.png" class="img-fluid" alt="" >
-                    <figcaption class="figure-caption text-center py-3" style="font-size: 16px">judul foto</figcaption>
-                </button>
-            </div>
-            <div class="col-lg-3 col-12 galeri my-3" >
-                <button type="button" class="figure border btn" data-bs-toggle="modal" data-bs-target="#galeriModal"  style="border-radius: 5px">
-                    <img src="/images/gurustaff-ex.png" class="img-fluid" alt="" >
-                    <figcaption class="figure-caption text-center py-3" style="font-size: 16px">judul foto</figcaption>
-                </button>
-            </div>
-            <div class="col-lg-3 col-12 galeri my-3" >
-                <button type="button" class="figure border btn" data-bs-toggle="modal" data-bs-target="#galeriModal"  style="border-radius: 5px">
-                    <img src="/images/gurustaff-ex.png" class="img-fluid" alt="" >
-                    <figcaption class="figure-caption text-center py-3" style="font-size: 16px">judul foto</figcaption>
-                </button>
-            </div>
-            <div class="col-lg-3 col-12 galeri my-3" >
-                <button type="button" class="figure border btn" data-bs-toggle="modal" data-bs-target="#galeriModal"  style="border-radius: 5px">
-                    <img src="/images/gurustaff-ex.png" class="img-fluid" alt="" >
-                    <figcaption class="figure-caption text-center py-3" style="font-size: 16px">judul foto</figcaption>
-                </button>
-            </div>
-            <div class="col-lg-3 col-12 galeri my-3" >
-                <button type="button" class="figure border btn" data-bs-toggle="modal" data-bs-target="#galeriModal"  style="border-radius: 5px">
-                    <img src="/images/gurustaff-ex.png" class="img-fluid" alt="" >
-                    <figcaption class="figure-caption text-center py-3" style="font-size: 16px">judul foto</figcaption>
-                </button>
-            </div>
+            @foreach ($galeries as $galery)
+                
+                <div class="col-lg-3 col-12 galeri my-3" >
+                    <button type="button" class="figure border btn" onclick="showDetails(this)" data-bs-toggle="modal" data-bs-target="#galeriModal" data-title={{ $galery->title }} data-image={{ asset('images/uploads/' . $galery->image) }} style="border-radius: 5px">
+                        <img src="{{ asset('images/uploads/' . $galery->image) }}" class="img-fluid" alt="" >
+                        <figcaption class="figure-caption text-center py-3" style="font-size: 16px">{{ $galery->title }}</figcaption>
+                    </button>
+                </div>
+            
+            @endforeach
 
 
             {{-- modal galeri --}}
@@ -76,11 +38,11 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="galeriModalLabel">judul foto</h5>
+                            <h5 class="modal-title" id="show-title">asd</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-center">
-                            <img src="/images/gurustaff-ex.png" class="img-fluid" alt="">
+                            <img src="/images/gurustaff-ex.png" id="show-image" class="img-fluid" alt="">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -92,4 +54,19 @@
         </div>
     </div>
 
+    <div class="d-flex justify-content-center">
+        
+        {{ $galeries->links() }}
+    </div>
+
+    <script>
+        function showDetails(photo)
+        {
+            var title = photo.getAttribute("data-title");
+            var image = photo.getAttribute("data-image");
+            document.getElementById("show-title").innerHTML = title;
+            document.getElementById("show-image").src = image;
+        }
+;
+    </script>
 @endsection

@@ -11,7 +11,7 @@ class BeritaController extends Controller
     public function index()
     {
         return view('user.Berita.index',[
-            'allNews' => News::latest()->get(),
+            'allNews' => News::latest()->paginate(10),
         ]);
     }
 

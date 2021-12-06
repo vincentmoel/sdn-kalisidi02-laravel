@@ -55,7 +55,7 @@ class NewsController extends Controller
         ]);
 
         $validatedData['image'] = request()->file('image')->store('news-images', ['disk' => 'public']);
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 50, '...');
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 170, '...');
         $slug = new News();
         $validatedData['slug'] = $slug->setSlugAttribute($request->title);
 
@@ -112,7 +112,7 @@ class NewsController extends Controller
         
         }
 
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 50, '...');
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 170, '...');
 
         if($request->title != $news->title)
         {
