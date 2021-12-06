@@ -71,7 +71,7 @@
                             <h3>Lokasi Sekolah</h3>
                         </div>
                         <div class="col-lg-10 col-12 lokasi-kontak px-2 py-4 mt-4">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3959.0159078653824!2d110.360924!3d-7.124153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3b491c26e999a8f6!2sElementary%20School%20Kalisidi%2002!5e0!3m2!1sen!2sus!4v1638290309062!5m2!1sen!2sus" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" style="border-radius: 10px"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3959.0159078653824!2d110.360924!3d-7.124153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3b491c26e999a8f6!2sElementary%20School%20Kalisidi%2002!5e0!3m2!1sen!2sus!4v1638290309062!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" style="border-radius: 10px"></iframe>
                         </div>
                     </div>
                 </div>

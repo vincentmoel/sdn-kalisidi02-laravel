@@ -51,12 +51,12 @@
                     @foreach ($teachers as $teacher)
                         
                     <div class="col">
-                        <div class="card border-dark pict-guru-staff">
+                        <div class="card h-100 border-dark pict-guru-staff">
                             <img src="{{ asset('images/uploads/' . $teacher->image) }}" class="img-card-top" alt="">
                             <div class="card-body text-center   ">
-                                <h5 class="card-title">{{ $teacher->name }}</h5>
-                                <p class="mb-0">{{ $teacher->position->name }}</p>
-                                <p class="mb-0">{{ $teacher->nip }}</p>
+                                <h6 class="card-title">{{ $teacher->name }}</h6>
+                                <p class="mb-0" style="font-size: 14px">{{ $teacher->position->name }}</p>
+                                <p class="mb-0" style="font-size: 14px">{{ $teacher->nip }}</p>
                             </div>
                         </div>
                     </div>

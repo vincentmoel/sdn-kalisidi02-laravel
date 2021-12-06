@@ -32,7 +32,7 @@
           <a class="nav-link" href="/tentang">Tentang</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/guru-staff">Guru dan Staff</a>
+          <a class="nav-link guru-staff" href="/guru-staff">Guru-Staff</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/siswa">Siswa</a>

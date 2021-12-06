@@ -1,7 +1,7 @@
 <style>
     .pict-berita img {
         width: 100%;
-        height: 139px;
+        height: 150px;
         object-fit: cover;
     }
 
@@ -17,11 +17,16 @@
         border-color: #1277cb;
     }
 
-    .berita-populer img {
-        width: 100%;
-        height: 90px;
-        object-fit: cover;
+    .berita-text p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* number of lines to show */
+                line-clamp: 3; 
+        -webkit-box-orient: vertical;
     }
+
+    
 
 </style>
 
@@ -65,8 +70,10 @@
                                                 <h4 class="card-title">{{ $news->title }}</h4>
                                                 <p style="font-size: 12px" class="mb-0">
                                                     {{ date_format($news->created_at, 'j F Y') }}</p>
-                                                <p style="font-size: 16px" class="mb-0">{!! $news->excerpt !!}
-                                                </p>
+                                                <div class="berita-text">
+                                                    <p style="font-size: 16px" class="mb-0">{!! $news->excerpt !!}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

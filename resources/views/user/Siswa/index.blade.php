@@ -20,8 +20,8 @@
         <div class="row w-75 mx-auto">
             <div class="col-12">
                 <form action="/siswa" method="GET">
-                    <div class="row">
-                        <div class="col-6">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-12 pb-3">
                             <form action="/siswa" method="GET">
 
                                 <label>
@@ -36,7 +36,7 @@
                                 </label>
                             </form>
                         </div>
-                        <div class="col-6">
+                        <div class="col-lg-6 col-12 pb-3">
                             <form action="/siswa" method="GET">
 
                                 <div class="input-group w-75" style="float: right;">
@@ -94,11 +94,11 @@
                     
                     <caption>
                         <div class="row">
-                            <div class="col">
+                            <div class="col-lg-10 col-12">
 
                                 Total Siswa : {{ $totalStudents }}
                             </div>
-                            <div class="col">
+                            <div class="col-lg-2 col-12">
                                 {{ $students->links() }}
                             </div>
                         </div>

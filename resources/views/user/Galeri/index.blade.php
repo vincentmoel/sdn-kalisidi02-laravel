@@ -1,7 +1,12 @@
 <style>
     .galeri a {
         text-decoration: none;
-        
+    }
+
+    .galeri-img img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
     }
 
 </style>
@@ -24,7 +29,7 @@
             @foreach ($galeries as $galery)
                 
                 <div class="col-lg-3 col-12 galeri my-3" >
-                    <button type="button" class="figure border btn" onclick="showDetails(this)" data-bs-toggle="modal" data-bs-target="#galeriModal" data-title={{ $galery->title }} data-image={{ asset('images/uploads/' . $galery->image) }} style="border-radius: 5px">
+                    <button type="button" class="figure border btn galeri-img" onclick="showDetails(this)" data-bs-toggle="modal" data-bs-target="#galeriModal" data-title={{ $galery->title }} data-image={{ asset('images/uploads/' . $galery->image) }} style="border-radius: 5px">
                         <img src="{{ asset('images/uploads/' . $galery->image) }}" class="img-fluid" alt="" >
                         <figcaption class="figure-caption text-center py-3" style="font-size: 16px">{{ $galery->title }}</figcaption>
                     </button>
