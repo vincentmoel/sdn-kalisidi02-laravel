@@ -1,7 +1,7 @@
 <style>
     .pict-berita img {
         width: 100%;
-        height: 119px;
+        height: 139px;
         object-fit: cover;
     }
 
@@ -59,7 +59,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">judul berita</h4>
                                             <p style="font-size: 12px" class="mb-0">tanggal upload</p>
-                                            <p style="font-size: 16px" class="mb-0">deskripsi berita</p>
+                                            <p style="font-size: 16px" class="mb-0">deskripsi berita lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +75,8 @@
                                         <div class="card-body">
                                             <h4 class="card-title">judul berita</h4>
                                             <p style="font-size: 12px" class="mb-0">tanggal upload</p>
-                                            <p style="font-size: 16px" class="mb-0">deskripsi berita</p>
+                                            
+                                            <p style="font-size: 16px" class="mb-0">deskripsi berita lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +92,8 @@
                                         <div class="card-body">
                                             <h4 class="card-title">judul berita</h4>
                                             <p style="font-size: 12px" class="mb-0">tanggal upload</p>
-                                            <p style="font-size: 16px" class="mb-0">deskripsi berita</p>
+                                            
+                                            <p style="font-size: 16px" class="mb-0">deskripsi berita lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
                                         </div>
                                     </div>
                                 </div>
@@ -106,8 +108,9 @@
                                     <div class="col-lg-9">
                                         <div class="card-body">
                                             <h4 class="card-title">judul berita</h4>
+                                            
                                             <p style="font-size: 12px" class="mb-0">tanggal upload</p>
-                                            <p style="font-size: 16px" class="mb-0">deskripsi berita</p>
+                                            <p style="font-size: 16px" class="mb-0">deskripsi berita lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
                                         </div>
                                     </div>
                                 </div>
@@ -122,8 +125,9 @@
                                     <div class="col-lg-9">
                                         <div class="card-body">
                                             <h4 class="card-title">judul berita</h4>
+                                            
                                             <p style="font-size: 12px" class="mb-0">tanggal upload</p>
-                                            <p style="font-size: 16px" class="mb-0">deskripsi berita</p>
+                                            <p style="font-size: 16px" class="mb-0">deskripsi berita lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
                                         </div>
                                     </div>
                                 </div>
@@ -138,8 +142,9 @@
                                     <div class="col-lg-9">
                                         <div class="card-body">
                                             <h4 class="card-title">judul berita</h4>
+                                            
                                             <p style="font-size: 12px" class="mb-0">tanggal upload</p>
-                                            <p style="font-size: 16px" class="mb-0">deskripsi berita</p>
+                                            <p style="font-size: 16px" class="mb-0">deskripsi berita lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet </p>
                                         </div>
                                     </div>
                                 </div>
@@ -148,7 +153,7 @@
                         
                     </div>
                 </div>
-                <div class="col-lg-3 col-12 bg-white">
+                <div class="col-lg-3 col-12 bg-light">
                     <div class="row">
                         <div class="col-12 text-center text-light py-2" style="background-color: #1277cb">
                             <h5>Berita Populer</h5>
