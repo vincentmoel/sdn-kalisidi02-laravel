@@ -11,8 +11,8 @@ class BerandaController extends Controller
     public function index()
     {
         return view('user.Beranda.index',[
-            'recentNews' => News::orderBy('id','desc')->limit(3)->get(),
-            'recentGaleries' => Galery::orderBy('id','desc')->limit(3)->get(),
+            'recentNews' => News::latest()->limit(3)->get(),
+            'recentGaleries' => Galery::latest()->limit(3)->get(),
 
         ]);
     }
