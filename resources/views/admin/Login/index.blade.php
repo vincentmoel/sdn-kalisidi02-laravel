@@ -11,11 +11,12 @@
   </div>
 @endif
 
-<main class="form-signin mt-5">
-    <h1 class="h3 mb-3 fw-normal">Login</h1>
+<div style="margin-top: 100px"></div>
+<main class="form-signin mt-5 w-25 mx-auto">
+    <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
     <form action="/login" method="post">
       @csrf
-      <div class="form-floating">
+      <div class="form-floating py-2">
         <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" id="username" autofocus required>
         <label for="username">Username</label>
 
@@ -28,14 +29,14 @@
 
       
 
-      <div class="form-floating">
+      <div class="form-floating py-2">
         <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
         <label for="password">Password</label>
 
 
       </div>
   
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <button class="w-100 my-2 btn btn-lg btn-primary" type="submit">Login</button>
     </form>
 </main>
 

@@ -1,6 +1,10 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-    <div class="position-sticky pt-3">
+    <div class="position-sticky">
         <ul class="nav flex-column">
+            <li class="nav-item">
+                <h3>Admin Sekolah</h3></a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" aria-current="page" href="/admin">
                     <span data-feather="home"></span>
@@ -42,6 +46,14 @@
                 </a>
             </li>
             @endif
+            
+            <li class="nav-item mt-3">
+                <form action="/logout" method="post">
+                    @csrf
+    
+                    <button class="btn btn-danger" type="submit">Sign Out</button>
+                </form>
+            </li>
             
         </ul>
 

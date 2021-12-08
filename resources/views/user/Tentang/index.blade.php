@@ -24,7 +24,7 @@
 
 @extends('layout.user.main',['title'=>'Tentang'])
 @section('container')
-    <div style="margin-top: 84px"></div>
+    <div style="margin-top: 83px"></div>
 
     {{-- header --}}
     <div class="container-fluid" style="background-image: url(/images/tentang/header.png)">
