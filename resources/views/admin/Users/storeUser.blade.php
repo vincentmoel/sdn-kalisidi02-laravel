@@ -1,7 +1,7 @@
 @extends('layout.admin.main')
 
 @section('container')
-    <div class="container-fluid my-4">
+    <div class="container-fluid my-4 w-75 mx-auto">
         <div class="row">
             <div class="col-12">
                 <h1 class="h2">Add Admin</h1>
