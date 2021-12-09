@@ -2,7 +2,7 @@
     <div class="position-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <h3>Admin Sekolah</h3></a>
+                <h3>{{ auth()->user()->name }}</h3></a>
             </li>
 
             <li class="nav-item">
