@@ -20,6 +20,7 @@
         <div class="row py-2">
             <div class="col-12 col-lg-3">
                 <form action="/admin/galeries" method="GET">
+                    Foto ditampilkan :
                     <select name='show' onchange='this.form.submit()'>
                         @for ($i = 10; $i <= 40; $i+=10)
                             <option value={{ $i }} @if (request('show') == $i) selected @endif>{{ $i }}</option>
