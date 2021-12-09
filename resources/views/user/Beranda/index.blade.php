@@ -113,7 +113,7 @@
         <div class="container w-75 mx-auto py-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12 text-center">
-                    <img src="/images/slider/1.png" style="width: 90%" class="img-fluid" alt="">
+                    <img src="/images/mmt.png" style="width: 90%" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 col-12 text-center">
                     <h2 class="pb-2 text-center py-4">PROFIL SINGKAT</h2>

@@ -19,7 +19,7 @@
 @section('container')
     <div style="margin-top: 84px"></div>
     <div class="container-fluid text-light py-5"
-        style="background-image: linear-gradient(to right top, #0081c0, #0098cb, #00adc5, #00bfb0, #00ce91);">
+    style="background-image: url(/images/header-guru.png)">
         <div class="row">
             <div class="col-12 text-center">
                 <h1>Guru dan Staff</h1>

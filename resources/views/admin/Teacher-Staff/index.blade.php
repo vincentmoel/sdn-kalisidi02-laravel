@@ -20,7 +20,7 @@
             <div class="col-12">
                 <table class="table">
                     <thead>
-                        <tr class="text-center">
+                        <tr class="">
                             <th scope="col">No</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Jenis Kelamin</th>

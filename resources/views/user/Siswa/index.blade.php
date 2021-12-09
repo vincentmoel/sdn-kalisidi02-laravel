@@ -8,8 +8,8 @@
 @section('container')
     <div style="margin-top: 84px"></div>
 
-    <div class="container-fluid py-5" style="background-image: linear-gradient(to right top, #0081c0, #0098cb, #00adc5, #00bfb0, #00ce91);>
-                    <div class="   row">
+    <div class="container-fluid py-5" style="background-image: url(/images/header-siswa.png)">
+                    <div class="row">
         <div class="col-12 text-light text-center">
             <h1>Siswa</h1>
         </div>

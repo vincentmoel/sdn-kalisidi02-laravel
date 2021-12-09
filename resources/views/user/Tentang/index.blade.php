@@ -100,7 +100,7 @@
                                                     <p><i class="fas fa-globe"></i></p>
                                                 </div>
                                                 <div class="col-lg-5 col-8">
-                                                    <a href="">www.abcde.sch.id</a>
+                                                    <a href="/">www.abcde.sch.id</a>
                                                 </div>
                                             </div>
                                         </div>
