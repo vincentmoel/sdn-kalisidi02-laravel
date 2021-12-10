@@ -22,7 +22,7 @@
     }
 </style>
 
-@extends('layout.user.main',['title'=>'Tentang'])
+@extends('layout.user.main',['title'=>'SD Negri Kalisidi 02 | Tentang'])
 @section('container')
     <div style="margin-top: 83px"></div>
 

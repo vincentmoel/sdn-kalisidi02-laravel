@@ -15,7 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
-    <title>SD Negri Kalisidi 02 | {{ isset($title) ? $title : config('app.name');}}</title>
+    <title>{{ isset($title) ? $title : config('app.name');}}</title>
 
     
   </head>

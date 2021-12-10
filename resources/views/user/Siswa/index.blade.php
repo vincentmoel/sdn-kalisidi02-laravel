@@ -2,7 +2,7 @@
 
 </style>
 
-@extends('layout.user.main',['title'=>'Siswa'])
+@extends('layout.user.main',['title'=>'SD Negri Kalisidi 02 | Siswa'])
 
 
 @section('container')

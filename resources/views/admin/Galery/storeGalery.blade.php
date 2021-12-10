@@ -1,4 +1,4 @@
-@extends('layout.admin.main')
+@extends('layout.admin.main',['title'=>'SD Negri Kalisidi 02 | Galeri'])
 
 @section('container')
     <div class="container-fluid my-4 w-75 mx-auto">
