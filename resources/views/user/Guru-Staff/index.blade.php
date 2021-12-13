@@ -13,7 +13,7 @@
 
 </style>
 
-@extends('layout.user.main',['title'=>'Guru dan Staff'])
+@extends('layout.user.main',['title'=>'SD Negri Kalisidi 02 | Guru dan Staff'])
 
 
 @section('container')

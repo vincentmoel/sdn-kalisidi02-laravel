@@ -1,4 +1,4 @@
-@extends('layout.user.main',['title'=>'Login'])
+@extends('layout.user.main',['title'=>'SD Negri Kalisidi 02 | Login'])
 
 
 

@@ -1,4 +1,4 @@
-@extends('layout.admin.main',['title'=>'Users'])
+@extends('layout.admin.main',['title'=>'SD Negri Kalisidi 02 | Users'])
 
 
 @section('container')

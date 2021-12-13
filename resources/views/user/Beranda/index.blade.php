@@ -36,7 +36,7 @@
 </style>
 
 
-@extends('layout.user.main',['title' => "Beranda"])
+@extends('layout.user.main',['title' => "SD Negri Kalisidi 02"])
 
 
 @section('container')

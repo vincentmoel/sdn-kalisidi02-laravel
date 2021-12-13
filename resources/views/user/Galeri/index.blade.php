@@ -11,7 +11,7 @@
 
 </style>
 
-@extends('layout.user.main',['title'=>'Galeri'])
+@extends('layout.user.main',['title'=>'SD Negri Kalisidi 02 | Galeri'])
 
 
 @section('container')

@@ -1,4 +1,4 @@
-@extends('layout.admin.main',['title'=>'Dashboard'])
+@extends('layout.admin.main',['title'=>'SD Negri Kalisidi 02 | Dashboard'])
 
 
 @section('container')

@@ -1,4 +1,4 @@
-@extends('layout.user.main',['title'=>'Show'])
+@extends('layout.user.main',['title'=>"$news->title"])
 
 @section('container')
     <div style="margin-top: 84px"></div>

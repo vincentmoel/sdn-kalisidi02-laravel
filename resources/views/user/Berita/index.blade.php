@@ -30,7 +30,7 @@
 
 </style>
 
-@extends('layout.user.main',['title'=>'Berita'])
+@extends('layout.user.main',['title'=>'SD Negri Kalisidi 02 | Berita'])
 
 
 @section('container')
