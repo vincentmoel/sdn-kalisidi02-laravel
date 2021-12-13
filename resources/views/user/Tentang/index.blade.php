@@ -90,7 +90,7 @@
                                                     <p><i class="fas fa-phone-alt"></i></p>
                                                 </div>
                                                 <div class="col-lg-5 col-8">
-                                                    <a href="">081234567890</a>
+                                                    <a href="https://wa.me/6285786827056" target="_blank">085786827056</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -100,7 +100,7 @@
                                                     <p><i class="fas fa-globe"></i></p>
                                                 </div>
                                                 <div class="col-lg-5 col-8">
-                                                    <a href="/">www.abcde.sch.id</a>
+                                                    <a href="/">www.sdnkalisidi02.host</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -110,7 +110,7 @@
                                                     <p><i class="fas fa-envelope"></i></p>
                                                 </div>
                                                 <div class="col-lg-5 col-8">
-                                                    <a href="">email@abc.com</a>
+                                                    <a href="mailto:sdkalisidi02@gmail.com" target="_blank">sdkalisidi02@gmail.com</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,7 +120,7 @@
                                                     <p><i class="fas fa-map-marker-alt"></i></p>
                                                 </div>
                                                 <div class="col-lg-5 col-8">
-                                                    <a href="">link gmaps</a>
+                                                    <a href="https://goo.gl/maps/V32eXEpd6A8RTb2CA">Maps</a>
                                                 </div>
                                             </div>
                                         </div>
